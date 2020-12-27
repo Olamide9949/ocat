@@ -1,0 +1,602 @@
+@font-face{
+    font-family: 'Avenir Next';
+    src: url("AvenirNext-Regular.otf"),
+    url("AvenirNext.otf")format("opentype");
+}
+*{
+    margin: 0;
+    padding: 0;
+    overflow: visible;
+    font-family: 'Avenir Next';
+    color: rgb(46, 44, 44);
+    transition: all .3s ease-in;
+}
+.main-body{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    background-color: rgba(204, 204, 204, 0.384);
+}
+.header-wrapper{
+    overflow: hidden;
+    height: 60vh;
+    width: 100vw;
+}
+.zoomoutheader{
+    height: 60vh;
+    width: 100vw;
+    background: none;
+    -webkit-animation: zoomout 35s ease-in infinite;
+    animation: zoomout 35s ease-in infinite;
+    transition: all .75s ease-in-out;
+    overflow: hidden;
+}
+
+.body-header{
+    background-image: url(./img/bg3.jpg);
+    background-position: center;
+    height: 60vh;
+    width: 100vw;
+    background-size: contain;
+    background-attachment: fixed;
+    background-repeat: repeat;
+    position: relative;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -webkit-animation: zoomin 35s ease-in infinite;
+    animation: zoomin 35s ease-in infinite;
+    transition: all .75s ease-in-out;
+    overflow: hidden;
+}
+@-webkit-keyframes zoomin {
+    0% {transform: scale(1);}
+    50% {transform: scale(1.5);}
+    100% {transform: scale(1);}
+  }
+  @keyframes zoomin {
+    0% {transform: scale(1);}
+    50% {transform: scale(1.5);}
+    100% {transform: scale(1);}
+  } /*End of Zoom in Keyframes */
+  
+  /* Zoom out Keyframes */
+  @-webkit-keyframes zoomout {
+    0% {transform: scale(1);}
+    50% {transform: scale(0.67);}
+    100% {transform: scale(1);}
+  }
+  @keyframes zoomout {
+      0% {transform: scale(1);}
+    50% {transform: scale(0.67);}
+    100% {transform: scale(1);}
+  }/*End of Zoom out Keyframes */
+.header-wrapper>.body-header>.zoomoutheader>h3{
+    font-family: 'Avenir Next';
+    font-size: 40px;
+    font-weight: 300;
+    padding-left: 40px;
+    padding-top: 60px;
+    width: 40vw;
+    text-shadow: #fff;
+}
+.search-form{ 
+    margin-top: -20px;
+    background-color: #fff;
+    border-radius: 10px;
+    padding-top: 40px;
+    padding-left: 20px;
+    padding-right: 20px;
+    height: 15vh;
+    position: absolute;
+    box-shadow: 0 8px 6px -6px rgba(0, 0, 0, 0.288);
+}
+.search-form>form>input{
+    width: 15vw;
+    height: 10vh;
+    border: 1px dashed rgba(24, 14, 14, 0.493);
+    font-family: 'Avenir Next';
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 14px;
+    border-radius: 5px;
+    padding: 10px;
+    color: rgba(31, 29, 29, 0.664);
+    
+}
+.search-form>form>label{
+    position: absolute;
+    top: 18px;
+    padding-left: 2px;
+    display: inline-flex;
+    justify-content: space-between;
+    font-family: 'Avenir Next';
+    font-weight: 500;
+    font-size: 12px;
+    text-transform: uppercase;
+    bottom: 0;
+    color: rgb(46, 44, 44);
+}
+.search-form>form>input:focus{
+    color: rgba(31, 29, 29, 0.664);
+    outline: rgba(24, 14, 14, 0.493);
+    border: 2px dashed rgba(24, 14, 14, 0.493);
+    transition: 0.2s;
+}
+
+.search-form>form>input::placeholder{
+    color: rgba(19, 19, 19, 0.363);
+    text-transform: capitalize;
+    font-weight: 300;
+}
+.search-form>form>button{
+    background-color: black;
+    background-image: url(./img/search-flight.png);
+    background-size: 28px;
+    background-repeat: no-repeat;
+    background-position: right;
+    color: #fff;
+    border-radius: 5px;
+    align-self: flex-end;
+    width: 12vw;
+    height: 8vh;
+    font-family: 'Avenir Next';
+    font-size: 17px;
+    text-align: left;
+    cursor: pointer;
+    padding: 8px;
+    outline: none;
+    border: none;
+}
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  appearance: none;
+}
+
+.search-form>form>button:hover{
+    background-color: rgb(48, 48, 48);
+}
+.search-form>form>button>img{
+    width: 44px;
+    height: 33px;
+}
+.form-header{
+    position: absolute;
+    top: 284px;
+    left: 152px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    width: 15vw;
+    height: 10vh;
+    cursor: pointer;
+    font-family: 'Avenir Next';
+    border-top-left-radius: 10px;
+    opacity: 0.88;
+
+}
+.form-header>h3{
+    font-weight: 500;
+    margin-left: 5px;
+}
+.form-header>img{
+    width: 33px;
+    height: 33px;
+}
+.flight-listing{
+    position: relative;
+    top: 30px;
+    padding: 60px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.flight-listing>.popular-listing-col>p{
+    font-size: 20px;
+    font-weight: 600;
+    text-decoration: wavy;
+}
+.popular-listing-col{
+    width: 70vw;
+}
+.bookings{
+    width: 28vw;
+}
+.popular-listing-col>p>img{
+    height: 33px;
+    width: 44px;
+    align-self: center;
+}
+.solo-text>p{
+    margin-top: 5px;
+    font-size: 10px;
+    color: rgba(0, 0, 0, 0.527);
+}
+.card-info{
+    margin-top: 30px;
+    border: 3px dashed rgba(0, 0, 0, 0.158);
+    width: auto;
+    height: 35vh;
+    padding: 20px;
+    margin-right:5px;
+    overflow: scroll;
+    box-shadow: 
+    0 8px 6px -6px rgba(0, 0, 0, 0.158),
+    0 21.8px 13.4px 6px rgba(0, 0, 0, 0.0158);
+    border-radius: 5px;  
+}
+
+.card{
+    display:flex;
+    flex-direction: row;
+}
+.col-II{
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+.col-I{
+    padding: 0;
+}
+.col-I>ul{
+    list-style: none;
+}
+.col-I>ul>li{
+    color: rgba(0, 0, 0, 0.5);
+    font-size: 14px;
+    margin-bottom: 2px;
+}
+.col-I>ul>li>strong{
+    font-weight: 500;
+    color: rgba(12, 12, 12, 0.692);
+}
+.cityCodes>li{
+    margin-bottom: 2px;
+    font-size: 12px;
+    color: rgba(0, 0, 0, 0.562);
+}
+.cityCodes{
+    margin-top: 20px;
+}
+
+.col-I>p, .col-II>p{
+    font-size: 12px;
+    margin-right: 5px;
+    margin-left: 5px;
+    color: rgba(37, 37, 37, 0.637);
+}
+.col-I>h3, .col-II>h3{
+    font-size: 14px;
+}
+.iatatCode{
+    font-size: 20px;
+    font-weight: 300;
+}
+.searchBox{
+    margin-top: 40px;
+    height: 30vh;
+    overflow: scroll;
+}
+.searchBox>form{
+    margin-top: 5px;
+    border-right: 3px dashed rgba(0, 0, 0, 0.397)
+}
+.searchBox>form>input{
+    height: 5vh;
+    width: 20vw;
+    border-radius: 5px;
+    padding: 10px;
+    color:rgba(0, 0, 0, 0.685);
+    border: 1px groove rgba(0, 0, 0, 0.219);
+    box-shadow: 
+    0 8px 6px -6px rgba(0, 0, 0, 0.158),
+    0 21.8px 13.4px 6px rgba(0, 0, 0, 0.0158);
+    outline: none;
+}
+.searchBox>form>input::placeholder{
+    color:rgba(0, 0, 0, 0.212);
+}
+.searchBox>form>button{
+    width: 7vw;
+    height: 5vh;
+    outline: none;
+    border: 1px solid #000000;
+    border-radius: 3px;
+    background-color: #fff;
+    color: #000;
+}
+.searchBox>form>button:hover{
+    background-color: black;
+    color: #fff;
+    cursor: pointer;
+    transition: 0.5s ease-out;
+}
+.searchBox>p>strong{
+    animation: animatetoright 1s steps(10) infinite alternate;
+    font-size: 20px;
+}
+@keyframes animatetoright {
+    0% {
+      left: 0;
+      margin-right: auto;
+    }
+    100% {
+      left: 100%;
+      margin-left: .6em;
+      margin-right: -.6em;
+    }
+  }
+  .bookings>form>input{
+    height: 5vh;
+    width: 8vw;
+    border-radius: 5px;
+    padding: 10px;
+    color:rgba(0, 0, 0, 0.685);
+    border: 1px groove rgba(0, 0, 0, 0.219);
+    box-shadow: 
+    0 8px 6px -6px rgba(0, 0, 0, 0.158),
+    0 21.8px 13.4px 6px rgba(0, 0, 0, 0.0158);
+    outline: none;
+  }
+  .bookings>form>input::placeholder{
+    color:rgba(0, 0, 0, 0.336);   
+  }
+  .booking-form, .booking-form>form, .closeb{
+      display: none;
+  }
+  .bookings>button{
+    height: 5vh;
+    width: 8vw;
+    border-radius: 5px;
+    padding: 10px;
+    color:rgba(0, 0, 0, 0.685);
+    border: 1px groove rgba(0, 0, 0, 0.219);
+    box-shadow: 
+    0 8px 6px -6px rgba(0, 0, 0, 0.158),
+    0 21.8px 13.4px 6px rgba(0, 0, 0, 0.0158);
+    outline: none;
+    position: fixed;
+    bottom: 23px;
+    right: 76px;
+    transition: 2s ease-in-out;
+    cursor: pointer;
+  }
+  /* Booking form styles here  */
+  .booking-form{
+      border-radius: 5px;
+      overflow: scroll;
+      position: fixed;
+      bottom:70px;
+      right:58px;
+      width: 26vw;
+      height: 80vh; 
+      background-color: rgb(255, 217, 0);
+      padding: 20px;
+      box-shadow: 
+      0 8px 6px -6px rgba(0, 0, 0, 0.158),
+      0 21.8px 13.4px 6px rgba(0, 0, 0, 0.116);
+  }
+  .booking-form>form>input{
+      height: 7vh;
+      width: 25vw;
+      border-radius: 5px;
+      margin-top: 2px;
+      margin-bottom: 2px;
+      padding: 10px;
+      color:rgba(0, 0, 0, 0.685);
+      border: 1px groove rgba(0, 0, 0, 0.219);
+      box-shadow: 
+      0 8px 6px -6px rgba(0, 0, 0, 0.158),
+      0 21.8px 13.4px 6px rgba(0, 0, 0, 0.0158);
+      outline: none; 
+  }
+  .booking-form>form>input::placeholder{
+    color:rgba(0, 0, 0, 0.212)
+  }
+  .booking-form>form>label{
+    font-family: 'Avenir Next';
+    font-weight: 500;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: rgb(39, 33, 33);
+  }
+  .booking-form>form>button{
+      margin-top: 10px;
+      height: 5vh;
+      width: 8vw;
+      background-color: black;
+      border: none;
+      outline: none;
+      color: #fff;
+      border-radius: 5px;
+      cursor: pointer;
+      box-shadow: 
+      0 8px 6px -6px rgba(0, 0, 0, 0.158),
+      0 21.8px 13.4px 6px rgba(0, 0, 0, 0.0158);
+  } 
+  .phonumber>select{
+    height: 5vh;
+    width: 5vw;
+    border-radius: 5px;
+    margin-top: 4px;
+    margin-bottom: 2px;
+    padding: 5px;
+    color:rgba(0, 0, 0, 0.685);
+    border: 1px groove rgba(0, 0, 0, 0.219);
+    box-shadow: 
+    0 8px 6px -6px rgba(0, 0, 0, 0.158),
+    0 21.8px 13.4px 6px rgba(0, 0, 0, 0.0158);
+    outline: none;
+  }
+  .phonumber>input{
+    height: 6vh;
+    width: 18vw;
+    border-radius: 5px;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    margin-left: -6px;
+    padding: 5px;
+    color:rgba(0, 0, 0, 0.685);
+    border: 1px groove rgba(0, 0, 0, 0.219);
+    box-shadow: 
+    0 8px 6px -6px rgba(0, 0, 0, 0.158),
+    0 21.8px 13.4px 6px rgba(0, 0, 0, 0.0158);
+    outline: none;   
+  }
+  /* .gender>input{
+      width:2.5vw;
+      height:2.5vh;
+  }
+  .gender>input[type=radio]{
+    transition: all .5s ease-in-out;
+  }
+  .gender>input[type=radio][name=radio1]:checked {
+    background-color: rgba(0, 0, 0, 0.733);
+  }
+  .gender>label{
+    font-family: 'Avenir Next';
+    font-weight: 500;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: rgb(39, 33, 33);
+  }
+  .gender{
+      margin-top: 5px;
+      margin-bottom: 5px;
+  } */
+  .phonumber>input::placeholder{
+      color:rgba(0, 0, 0, 0.212)
+  }
+  .phonumber>label{
+    font-family: 'Avenir Next';
+    font-weight: 500;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: rgb(39, 33, 33);   
+  }
+  .phonumber{
+      margin-bottom:5px;
+      margin-top:5px;
+  }
+  .booking-form>form>select{
+    height: 7vh;
+    width: 25vw;
+    border-radius: 5px;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    margin-left: -6px;
+    padding: 5px;
+    color:rgba(0, 0, 0, 0.685);
+    border: 1px groove rgba(0, 0, 0, 0.219);
+    box-shadow: 
+    0 8px 6px -6px rgba(0, 0, 0, 0.158),
+    0 21.8px 13.4px 6px rgba(0, 0, 0, 0.0158);
+    outline: none;  
+  }
+
+  /* Flish search result page styling */
+  .index-container{
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      overflow: scroll;
+      width: 80vw;
+      height: 90vh;
+      border-radius: 5px;
+      background-color: #fff;
+      box-shadow:0 0 20px rgba(0, 0, 0, 0.24);
+      padding: 10px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+  }
+  .index-container>.from-col>h3, .index-container>.to-col>h3{
+      font-size: 10px;
+      font-weight: 700;
+      margin-top: -10px;
+  }
+  .index-container>.from-col>.placeCode, .index-container>.to-col>.placeCode{
+      font-size: 42px;
+  }
+.duration{
+    font-size: 12px;
+    font-weight: bold;
+}
+.price{
+    font-size: 12px;
+    font-weight: bold;
+}
+.class{
+    font-size: 12px;
+    font-weight: bold;
+}
+.duration>span{
+    padding-left: 5px;
+    letter-spacing: 2px;
+    font-weight: 400;
+}
+.price>span{
+    padding-left: 2px;
+    color: rgb(237, 100, 111);
+    font-weight: 400;
+}
+.class>span{
+    padding-left: 2px;
+    color: rgba(197, 145, 1, 0.774);
+    font-weight: 400;
+}
+.to-col>p, .from-col>p{
+    font-size: 12px;
+}
+.index-header>h3{
+    position: fixed;
+    top: 18px;
+    right: 8%;
+    z-index: 1000;
+    width: 40px;
+    height: 40px;
+    border:3px dashed #fff;
+    border-radius: 50%;
+    background-color: rgba(243, 125, 57, 0.89);
+    box-shadow:0 0 20px rgba(0, 0, 0, 0.24);
+}
+.index-header>h3>a{
+    position: relative;
+    top: 8px;
+    left: 34%;
+    color: #fff;
+    text-decoration: none;
+}
+.middle-col>img{
+    position: absolute;
+    top: 45%;
+    left: 45%;
+    z-index: 1;
+    width: 88px;
+    height:88px;
+}
+.search-ad-result{
+    display: inline-flex;
+    flex-direction: column;
+}
+.search-ad-result>ul{
+    list-style: none;
+    margin-bottom:2px;
+    box-shadow: 0 8px 6px -6px rgba(0, 0, 0, 0.247);
+}
+.search-ad-result>ul>li{
+    margin-bottom: 2px;
+    padding:10px;
+    font-size: 14px;
+}
+.search-ad-result>ul>li>strong{
+ color: rgba(0, 0, 0, 0.377);   
+}

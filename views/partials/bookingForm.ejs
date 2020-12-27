@@ -1,0 +1,95 @@
+<div class="bookings">
+    <button type="submit" onclick="openForm()" id="bnow">Book Now</button>
+    <button type="submit" onclick="closeForm()" id="closeb" class="closeb">
+      Close
+    </button>
+    <div class="booking-form" id="bForm">
+      <form action="/flightCreateOrder" method="POST" id="fomrB">
+        <label for="fname">First Name</label>
+        <input
+          type="text"
+          id="fname"
+          name="firstName"
+          value=""
+          placeholder="Olamide"
+        />
+        <label for="lname">Last Name</label>
+        <input
+          type="text"
+          id="lname"
+          name="lastName"
+          value=""
+          placeholder="Tosin"
+        />
+        <label for="email">Email</label>
+        <input
+          type="email"
+          id="email"
+          name="emailAddress"
+          value=""
+          placeholder="larrytosn@gmail.com"
+        />
+        <div class="phonumber">
+          <label for="countryCallingCode">Tel:</label>
+          <select name="countryCallingCode" id="countryCallingCode">
+            <option value="234">+234</option>
+            <option value="233">+233</option>
+            <option value="1">+1</option>
+            <option value="44">+44</option>
+          </select>
+          <input
+            type="number"
+            name="number"
+            value=""
+            placeholder="09098353593"
+          />
+        </div>
+        <label for="documentType">Document Type:</label>
+        <select name="documentType" id="documentType">
+          <option value=" "> </option>
+          <option value="PASSPORT">International Passport</option>
+        </select>
+        <label for="isLoc">Card Issuance State</label>
+        <input
+          type="text"
+          id="isLoc"
+          name="issuanceLocation"
+          value=""
+          placeholder="Issuance State"
+        />
+        <label for="isDate">Issued On</label>
+        <input
+          type="date"
+          id="isDate"
+          name="issuanceDate"
+          value=""
+          placeholder="Issuance Date"
+        />
+        <label for="exDate">Will Expire On</label>
+        <input
+          type="date"
+          name="expiryDate"
+          id="exDate"
+          value=""
+          placeholder="Expiry Date"
+        />
+        <label for="dob">Date of Birth</label>
+        <input
+          type="date"
+          name="dateOfBirth"
+          id="dob"
+          value=""
+        />
+        <label for="pnumber">Passport Number</label>
+        <input
+          type="text"
+          id="pnumber"
+          name="pnumber"
+          value=""
+          placeholder="A2003122"
+        />
+        <input type="text" name="deviceType" value="MOBILE" disabled style="display: none;">
+        <button type="submit" disabled>Book</button>
+      </form>
+    </div>
+  </div>

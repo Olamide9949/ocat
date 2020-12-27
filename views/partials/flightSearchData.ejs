@@ -1,0 +1,40 @@
+<div class="from-col">
+<% fl.data.forEach(a => { %>
+            <% a.itineraries.forEach(b => { %>
+                <% b.segments.forEach(c => { %>
+                    <p class="placeCode"><%= c.departure.iataCode %> </p>
+                    <h3>From:</h3>
+                    <span><%=c.departure.at%></span>
+                <% }) %>
+                <%=  %> 
+                <p class="duration">Duration:<span><%=b.duration%></span></p>
+           <% }); %> 
+           <p class="price">Price: <%=a.price.currency%> <span><%=a.price.total%></span></p>
+           <% a.travelerPricings.forEach(p => { %>
+            <p> <%= p.fareOption %>, <%= p.travelerType %> </p>
+            <% p.fareDetailsBySegment.forEach(cl => { %>
+                <p class="class"><span><%=cl.cabin%></span></p>
+            <% }) %>
+           <% }) %>
+    <% }); %>
+</div>
+<div class="to-col">
+    <% fl.data.forEach(a => { %>
+                <% a.itineraries.forEach(b => { %>
+                    <% b.segments.forEach(c => { %>
+                        <p class="placeCode"><%= c.arrival.iataCode %> </p>
+                        <h3>To:</h3>
+                        <span><%=c.arrival.at%></span>
+                    <% }) %>
+                    <p class="duration">Duration:<span><%=b.duration%></span></p>
+                    <% }); %> 
+                    <p class="price"><%=a.price.currency%>:<span><%=a.price.total%></span></p>
+                    <% a.travelerPricings.forEach(p => { %>
+                        <p> <%= p.fareOption %>, <%= p.travelerType %> </p>
+                     <% p.fareDetailsBySegment.forEach(cl => { %>
+                         <p class="class"><span><%=cl.cabin%></span></p>
+                     <% }) %>
+                    <% }) %>
+             <% }); %>
+    </div>
+    
