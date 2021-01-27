@@ -1,45 +1,12 @@
-<%- include('partials/header.ejs') %>
-
-<div class="header-wrapper">
-  <div class="body-header">
-    <div class="zoomoutheader">
-      <h3>Hey buddy where are you <strong>Flying</strong> to?</h3>
+<div class="main--view">
+    <%- include('partials/header.ejs') %>
+    <%- include('partials/menu.ejs') %>
+    <%- include('partials/landing.ejs') %> 
+    <div class="float--btn">
+        <a href="/">^</a>
     </div>
-  </div>
 </div>
-<div class="main-body">
-  <div class="form-header">
-    <img src="/img/flights.png" alt="flight booking icon" />
-    <h3>Flight</h3>
-  </div>
-  <%- include('partials/flightSearchForm.ejs') %> 
-</div>
-<div class="flight-listing">
-  <div class="popular-listing-col">
-    <p>Flight Offers <img src="/img/flight-straight.png" alt="" /></p>
-    <span class="solo-text">
-      <p>Use short code of popular cities to search see example below...</p>
-    </span>
-    <div class="card card-info">
-      <div class="col-I">
-          <%- include('partials/cityCodes.ejs') %> 
-      </div>
-    </div>
-  </div>
-
-<%# Search form and Booking Form is rendered in this col-II  %> 
-  <div class="col-II">
-    <%- include('partials/citySearchForm.ejs') %> 
-    <span class="solo-text">
-        <p>Use short code of popular cities to search...</p>
-    </span>
-    <div class="col-I">
-      <%- include('partials/cityCodesSearch.ejs') %> 
-  </div>
-    </div>
-    <%- include('partials/bookingForm.ejs') %> 
-  </div>
-</div>
+<%# include('partials/script.ejs') %>
 
 <%# Vanilla JavaScript book now hide and show modal pop out form  button%> 
-<%- include('partials/hideShowScript.ejs') %> 
+<%# include('partials/hideShowScript.ejs') %> 
